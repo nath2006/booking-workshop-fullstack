@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('occupation');
             $table->string('email');
             $table->foreignId('workshop_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('booking_transation_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('booking_transactions_id')->constrained()->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });
