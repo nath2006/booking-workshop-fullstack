@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CategoryResource\Pages;
-use App\Filament\Resources\CategoryResource\RelationManagers;
-use App\Models\Category;
+use App\Filament\Resources\WorkshopinstructorsResource\Pages;
+use App\Filament\Resources\WorkshopinstructorsResource\RelationManagers;
+use App\Models\Workshopinstructors;
 use Filament\Forms;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -14,11 +13,14 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CategoryResource extends Resource
+class WorkshopInstructorsResource extends Resource
 {
-    protected static ?string $model = Category::class;
+    protected static ?string $model = Workshopinstructors::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static ?string $label = 'Workshop Instructor';
+    protected static ?string $pluralLabel = 'Workshop Instructors';
 
     public static function form(Form $form): Form
     {
@@ -29,26 +31,25 @@ class CategoryResource extends Resource
                 ->required()
                 ->maxLength(255),
 
-                Forms\Components\TextInput::make('tagline')
+                Forms\Components\TextInput::make('occupation')
                 ->required()
                 ->maxLength(255),
 
-                Forms\Components\FileUpload::make('icon')
+                Forms\Components\FileUpload::make('avatar')
                 ->image()
-                ->required(),
-
+                ->required()
             ]);
     }
 
     public static function table(Table $table): Table
     {
-
         return $table
             ->columns([
                 //
                 Tables\Columns\TextColumn::make('name')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('icon'),
+                ->searchable(),
+                Tables\Columns\TextColumn::make('occupation'),
+                Tables\Columns\ImageColumn::make('avatar'),
             ])
             ->filters([
                 //
@@ -74,9 +75,9 @@ class CategoryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCategories::route('/'),
-            'create' => Pages\CreateCategory::route('/create'),
-            'edit' => Pages\EditCategory::route('/{record}/edit'),
+            'index' => Pages\ListWorkshopinstructors::route('/'),
+            'create' => Pages\CreateWorkshopinstructors::route('/create'),
+            'edit' => Pages\EditWorkshopinstructors::route('/{record}/edit'),
         ];
     }
 }
