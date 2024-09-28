@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 
 class Workshop extends Model
 {
-    use HasFactory, softDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -37,10 +37,10 @@ class Workshop extends Model
 
     public function setNameAttribute($value){
         $this->attributes['name'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
+        $this->attributes['slung'] = Str::slug($value);
     }
 
-    public function benefit():HasMany {
+    public function benefits():HasMany {
         return $this->hasMany(WorkshopBenefits::class);
     }
 
