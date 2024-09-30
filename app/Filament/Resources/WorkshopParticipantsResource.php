@@ -24,6 +24,30 @@ class WorkshopParticipantsResource extends Resource
         return $form
             ->schema([
                 //
+                Forms\Components\TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+
+                Forms\Components\TextInput::make('occupation')
+                ->required()
+                ->maxLength(255),
+
+                Forms\Components\TextInput::make('email')
+                ->required()
+                ->maxLength(255),
+
+                Forms\Components\Select::make('workshop_id')
+                ->relationship('workshop','name')
+                ->searchable()
+                ->preload()
+                ->required(),
+
+                Forms\Components\Select::make('booking_transaction_id')
+                ->relationship('bookingTransaction','booking_trx_id')
+                ->searchable()
+                ->preload()
+                ->required(),
+
             ]);
     }
 
@@ -32,6 +56,13 @@ class WorkshopParticipantsResource extends Resource
         return $table
             ->columns([
                 //
+                Tables\Columns\ImageColumn::make('workshop.thumbnail'),
+
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+
+                Tables\Columns\TagsColumn::make('email')
+                    ->searchable()
             ])
             ->filters([
                 //

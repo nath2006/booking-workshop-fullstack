@@ -19,7 +19,7 @@ class BookingTransaction extends Model
         'customer_bank_name',
         'customer_bank_account',
         'customer_bank_number',
-        'booking_tx_id',
+        'booking_trx_id',
         'proof',
         'quantity',
         'total_amount',
@@ -31,7 +31,7 @@ class BookingTransaction extends Model
         $prefix = 'AKTIV';
         do {
             $ranadomString = $prefix . mt_rand(1000, 9999);
-        } while (selft::where('booking_trx_id' , $ranadomString)->existist());
+        } while (self::where('booking_trx_id' , $ranadomString)->existist());
     }
 
     public function participants(): HasMany{
@@ -39,6 +39,6 @@ class BookingTransaction extends Model
     }
 
     public function workshop(): BelongsTo{
-        return $this->belongsTo(Workshop::lass);
+        return $this->belongsTo(Workshop::class);
     }
 }

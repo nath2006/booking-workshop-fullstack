@@ -15,10 +15,10 @@ class WorkshopParticipants extends Model
 
     protected $fillable = [
         'name',
-        'ocupation',
+        'occupation',
         'email',
         'workshop_id',
-        'booking_transaction_id',
+        'booking_transaction_id'
     ];
 
     public function workshop(): BelongsTo{
