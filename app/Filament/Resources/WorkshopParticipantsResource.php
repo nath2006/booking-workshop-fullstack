@@ -17,7 +17,7 @@ class WorkshopParticipantsResource extends Resource
 {
     protected static ?string $model = WorkshopParticipants::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     public static function form(Form $form): Form
     {
@@ -68,6 +68,7 @@ class WorkshopParticipantsResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([

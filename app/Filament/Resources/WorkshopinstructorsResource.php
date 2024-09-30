@@ -17,7 +17,7 @@ class WorkshopInstructorsResource extends Resource
 {
     protected static ?string $model = Workshopinstructors::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-identification';
 
     protected static ?string $label = 'Workshop Instructor';
     protected static ?string $pluralLabel = 'Workshop Instructors';
