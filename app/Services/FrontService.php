@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Services;
+
 use App\Repositories\Contracts\CategoryRepositoryInterface;
 use App\Repositories\Contracts\WorkshopRepositoryInterface;
 

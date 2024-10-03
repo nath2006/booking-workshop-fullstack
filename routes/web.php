@@ -6,9 +6,9 @@ use App\Http\Controllers\BookingController;
 
 Route::get('/', [FrontController::class, 'index'])->name('front.index');
 
-Route::get('/browse{category:slug', [FrontController::class, 'category'])->name('front.category');
+Route::get('/browse/{category:slung}', [FrontController::class, 'category'])->name('front.category');
 
-Route::get('/details{workshop:slug', [FrontController::class, 'details'])->name('front.details');
+Route::get('/details/{workshop:slung}', [FrontController::class, 'details'])->name('front.details');
 
 Route::get('/check-booking', [BookingController::class, 'checkBooking'])->name('front.check_booking');
 Route::post('/check-booking/details', [BookingController::class, 'checkBookingDetails'])->name('front.check_booking_details');

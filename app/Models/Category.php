@@ -14,14 +14,14 @@ class Category extends Model
 
     protected $fillable = [
         'name',
-        'slug',
+        'slung',
         'icon',
         'tagline',
     ];
 
     public function setNameAttribute($value){
         $this->attributes['name'] = $value;
-        $this->attributes['slug'] = Str::slug(($value));
+        $this->attributes['slung'] = Str::slug(($value));
     }
 
     public function workshops(): HasMany{

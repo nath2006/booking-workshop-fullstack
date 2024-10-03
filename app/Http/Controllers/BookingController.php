@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Request\StoreBookingRequest;
-use App\Http\Request\StoreCheckBookingRequest;
-use App\Http\Request\StorePaymentRequest;
+use App\Http\Requests\StoreBookingRequest;
+use App\Http\Requests\StoreCheckBookingRequest;
+use App\Http\Requests\StorePaymentRequest;
 use App\Models\BookingTransaction;
 use App\Models\Workshop;
 use App\Services\BookingService;
