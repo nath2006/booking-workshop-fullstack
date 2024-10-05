@@ -132,7 +132,7 @@
                                 <div class="flex items-center gap-1">
                                     <img src="{{asset('assets/images/icons/calendar-2.svg')}}" class="w-6 h-6 flex shrink-0" alt="icon">
                                     <span class="font-medium text-aktiv-grey">
-                                        {{$itemNewWorkshop->started_at->format('M','d','Y')}}
+                                        {{$itemNewWorkshop->started_at->format('M d, Y')}}
                                     </span>
                                 </div>
                                 <div class="flex items-center gap-1">

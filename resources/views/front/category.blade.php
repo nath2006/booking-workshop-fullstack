@@ -1,5 +1,5 @@
 @extends('layouts.app')
-section('title')
+@section('title')
 Details {{$category->name}}
 @endsection
 @section('content')
@@ -62,7 +62,7 @@ Details {{$category->name}}
                                     <div class="flex items-center gap-1">
                                         <img src="{{asset('assets/images/icons/calendar-2.svg')}}" class="w-6 h-6 flex shrink-0" alt="icon">
                                         <span class="font-medium text-aktiv-grey">
-                                            {{$itemDetailCategory->started_at->format('M','d','Y')}}
+                                            {{$itemDetailCategory->started_at->format('M d, Y')}}
                                         </span>
                                     </div>
                                     <div class="flex items-center gap-1">

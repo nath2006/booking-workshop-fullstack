@@ -77,7 +77,7 @@ Details {{$workshop->name}}
                                 <div class="flex flex-col gap-2">
                                     <p class="font-medium text-aktiv-grey">Kick off date</p>
                                     <p class="font-semibold text-lg leading-[27px]">
-                                        {{$workshop->started_at->format('M','d','Y')}}
+                                        {{$workshop->started_at->format('M d, Y')}}
                                     </p>
                                 </div>
                                 <img src="{{asset('assets/images/icons/Kick off date.png')}}" class="w-16 h-16 flex shrink-0" alt="icon">
