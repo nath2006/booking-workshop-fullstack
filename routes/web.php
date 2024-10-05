@@ -16,7 +16,7 @@ Route::post('/check-booking/details', [BookingController::class, 'checkBookingDe
 Route::get('/booking/payment', [BookingController::class, 'payment'])->name('front.payment');
 Route::post('/booking/payment', [BookingController::class, 'paymentStore'])->name('front.payment_store');
 
-Route::get('/booking/{workshop:slug}', [BookingController::class, 'booking'])->name('front.booking');
-Route::post('/booking/{workshop:slug}', [BookingController::class, 'bookingStore'])->name('front.booking.store');
+Route::get('/booking/{workshop:slung}', [BookingController::class, 'booking'])->name('front.booking');
+Route::post('/booking/{workshop:slung}', [BookingController::class, 'bookingStore'])->name('front.booking.store');
 
 Route::get('/booking/finished/{bookingTransaction}', [BookingController::class, 'bookingFinished'])->name('front.booking_finished');

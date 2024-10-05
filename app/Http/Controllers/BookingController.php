@@ -17,7 +17,11 @@ class BookingController extends Controller
     protected $bookingService;
 
     public function __construct(BookingService $bookingService){
-        $this->bookiingService = $bookingService;
+        $this->bookingService = $bookingService;
+    }
+
+    public function booking(Workshop $workshop){
+        return view('booking.booking', compact('workshop'));
     }
 
     public function bookingStore(StoreBookingRequest $request, Workshop $workshop){
